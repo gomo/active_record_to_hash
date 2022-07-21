@@ -20,7 +20,11 @@ module ActiveRecordToHash
   end
 
   def retrieve_child_attribute(record, attr_name, options, callee) # rubocop:disable Metrics/AbcSize
-    return options[:value] if options[:value]
+    if options[:value]
+      return options[:value].call(record) if options[:value].is_a? Proc
+
+      return options[:value]
+    end
 
     args = options[:args] || []
     value = record.public_send(attr_name, *args)

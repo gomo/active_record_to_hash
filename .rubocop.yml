@@ -65,7 +65,7 @@ Metrics/BlockLength:
 
 
 Metrics/MethodLength:
-  Max: 20
+  Max: 24
 
 Rails/HttpPositionalArguments:
   Exclude:
@@ -84,10 +84,10 @@ Metrics/ModuleLength:
   Max: 120
 
 Metrics/CyclomaticComplexity:
-  Max: 9
+  Max: 10
 
 Metrics/PerceivedComplexity:
-  Max: 9
+  Max: 10
 
 Style/RegexpLiteral:
   Enabled: false
