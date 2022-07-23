@@ -237,9 +237,13 @@ describe 'to_hash' do
   end
 
   example 'value with lamda' do
-    shop_hash = shop.to_hash(with_hogehoge: { value: lambda do |shop|
-      shop.id
-    end })
+    shop_hash = shop.to_hash(
+      with_hogehoge: {
+        value: lambda do |shop|
+          shop.id
+        end
+      }
+    )
     expect(shop_hash[:hogehoge]).to eq shop.id
   end
 end
