@@ -246,4 +246,16 @@ describe 'to_hash' do
     )
     expect(shop_hash[:hogehoge]).to eq shop.id
   end
+
+  example 'optional value' do
+    shop_hash = shop.to_hash(
+      with_hogehoge: {
+        value: lambda do |_shop|
+          nil
+        end,
+        optional: true
+      }
+    )
+    expect(shop_hash.key?(:hogehoge)).to be_falsy
+  end
 end

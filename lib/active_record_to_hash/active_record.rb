@@ -23,6 +23,8 @@ module ActiveRecordToHash
 
         ActiveRecordToHash.handle_with_options(options) do |hash_key, attr_name, child_options|
           child = ActiveRecordToHash.retrieve_child_attribute(self, attr_name, child_options, __callee__)
+          next if child_options[:optional] == true && child.blank?
+
           result[hash_key] = ActiveRecordToHash.handle_alter(child, child_options)
         end
 
