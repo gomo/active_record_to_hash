@@ -258,4 +258,13 @@ describe 'to_hash' do
     )
     expect(shop_hash.key?(:hogehoge)).to be_falsy
   end
+
+  example 'value with nil' do
+    shop_hash = shop.to_hash(
+      with_hogehoge: {
+        value: nil
+      }
+    )
+    expect(shop_hash[:hogehoge]).to be nil
+  end
 end
