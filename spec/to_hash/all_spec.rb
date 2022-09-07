@@ -16,7 +16,8 @@ describe 'to_hash' do
         name: shop.name,
         created_at: shop.created_at,
         updated_at: shop.updated_at,
-        category_id: shop.category_id
+        category_id: shop.category_id,
+        some_value: nil
       )
     end
 
@@ -25,13 +26,15 @@ describe 'to_hash' do
         id: shop.id,
         name: shop.name,
         updated_at: shop.updated_at,
-        category_id: shop.category_id
+        category_id: shop.category_id,
+        some_value: nil
       )
 
       expect(shop.to_hash(except: %i[updated_at created_at])).to match(
         id: shop.id,
         name: shop.name,
-        category_id: shop.category_id
+        category_id: shop.category_id,
+        some_value: nil
       )
     end
 
@@ -266,5 +269,15 @@ describe 'to_hash' do
       }
     )
     expect(shop_hash[:hogehoge]).to be nil
+  end
+
+  example 'ignore_nil' do
+    expect(shop.to_hash(ignore_nil: true, with_hogehoge: { value: nil })).to match(
+      id: shop.id,
+      name: shop.name,
+      updated_at: shop.updated_at,
+      created_at: shop.created_at,
+      category_id: shop.category_id
+    )
   end
 end

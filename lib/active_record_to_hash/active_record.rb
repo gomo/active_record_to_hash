@@ -15,6 +15,7 @@ module ActiveRecordToHash
             key = k.to_sym
             next if ActiveRecordToHash.to_a(options[:except]).include?(key)
             next if options[:only] && !ActiveRecordToHash.to_a(options[:only]).include?(key)
+            next if options[:ignore_nil] && v.nil?
 
             memo[key] = v
           end
@@ -24,6 +25,7 @@ module ActiveRecordToHash
         ActiveRecordToHash.handle_with_options(options) do |hash_key, attr_name, child_options|
           child = ActiveRecordToHash.retrieve_child_attribute(self, attr_name, child_options, __callee__)
           next if child_options[:optional] == true && child.blank?
+          next if options[:ignore_nil] && child.nil?
 
           result[hash_key] = ActiveRecordToHash.handle_alter(child, child_options)
         end

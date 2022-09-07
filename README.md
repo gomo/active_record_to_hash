@@ -169,6 +169,10 @@ p shop.to_hash(only: [:id, :name], with_areas: :exists)
 # {:id=>1, :name=>"Shop No1", :areas=>true}
 # You can use this option only with ActiveRecord::Relation
 
+
+p shop.to_hash(ignore_nil: true)
+# When the value is nil, it skips that key.
+
 ```
 
 ### Configuration
