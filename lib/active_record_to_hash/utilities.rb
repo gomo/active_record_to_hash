@@ -26,6 +26,13 @@ module ActiveRecordToHash
       return options[:value]
     end
 
+    if options.key?(:delegate)
+      key = options[:delegate].keys.first
+      value = options[:delegate].values.first
+
+      return record.public_send(key).public_send(value)
+    end
+
     args = options[:args] || []
     value = record.public_send(attr_name, *args)
     if options[:exists]

@@ -280,4 +280,16 @@ describe 'to_hash' do
       category_id: shop.category_id
     )
   end
+
+  example 'delegate' do
+    expect(shop.to_hash(with_category_name: { delegate: { category: :name } })).to match(
+      id: shop.id,
+      name: shop.name,
+      updated_at: shop.updated_at,
+      created_at: shop.created_at,
+      category_id: shop.category_id,
+      category_name: shop.category.name,
+      some_value: nil
+    )
+  end
 end
