@@ -19,7 +19,7 @@ module ActiveRecordToHash
     [value]
   end
 
-  def retrieve_child_attribute(record, attr_name, options, callee) # rubocop:disable Metrics/AbcSize
+  def retrieve_child_attribute(record, attr_name, options, callee) # rubocop:disable Metrics/AbcSize, Metrics/CyclomaticComplexity, Metrics/MethodLength, Metrics/PerceivedComplexity, Metrics/LineLength
     if options.key?(:value)
       return options[:value].call(record) if options[:value].is_a? Proc
 
