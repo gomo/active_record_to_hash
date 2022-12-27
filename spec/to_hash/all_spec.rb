@@ -291,5 +291,9 @@ describe 'to_hash' do
       category_name: shop.category.name,
       some_value: nil
     )
+
+    no_category_shop = FactoryBot.create(:shop, category: nil)
+    hash = no_category_shop.to_hash(with_category_name: { delegate: { category: :name } })
+    expect(hash['category_name']).to be nil
   end
 end

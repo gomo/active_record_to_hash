@@ -30,7 +30,10 @@ module ActiveRecordToHash
       key = options[:delegate].keys.first
       value = options[:delegate].values.first
 
-      return record.public_send(key).public_send(value)
+      delegator = record.public_send(key)
+      return nil if delegator.nil?
+
+      return delegator.public_send(value)
     end
 
     args = options[:args] || []
