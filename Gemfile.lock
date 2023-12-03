@@ -1,8 +1,8 @@
 PATH
   remote: .
   specs:
-    active_record_to_hash (1.4.1)
-      rails (>= 5.0, <= 6.1.4.4)
+    active_record_to_hash (1.5.0)
+      rails (>= 5.0, <= 7)
 
 GEM
   remote: https://rubygems.org/
@@ -75,6 +75,7 @@ GEM
     concurrent-ruby (1.1.9)
     crass (1.0.6)
     database_cleaner (1.99.0)
+    date (3.3.4)
     debug_inspector (1.1.0)
     diff-lcs (1.4.4)
     erubi (1.10.0)
@@ -85,22 +86,34 @@ GEM
       railties (>= 3.0.0)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
-    globalid (1.0.0)
-      activesupport (>= 5.0)
+    globalid (1.2.1)
+      activesupport (>= 6.1)
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     jaro_winkler (1.5.4)
     loofah (2.13.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
-    mail (2.7.1)
+    mail (2.8.1)
       mini_mime (>= 0.1.1)
+      net-imap
+      net-pop
+      net-smtp
     marcel (1.0.2)
     method_source (1.0.0)
-    mini_mime (1.1.2)
+    mini_mime (1.1.5)
     mini_portile2 (2.6.1)
     minitest (5.15.0)
-    nio4r (2.5.8)
+    net-imap (0.4.5)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
+    net-protocol (0.2.2)
+      timeout
+    net-smtp (0.4.0)
+      net-protocol
+    nio4r (2.6.1)
     nokogiri (1.12.5)
       mini_portile2 (~> 2.6.1)
       racc (~> 1.4)
@@ -195,11 +208,12 @@ GEM
       sprockets (>= 3.0.0)
     sqlite3 (1.4.2)
     thor (1.1.0)
+    timeout (0.4.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.6.1)
     webrick (1.7.0)
-    websocket-driver (0.7.5)
+    websocket-driver (0.7.6)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
     yard (0.9.27)
