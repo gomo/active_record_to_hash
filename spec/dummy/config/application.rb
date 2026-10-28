@@ -17,8 +17,8 @@ require 'active_record_to_hash'
 
 module Dummy
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.1
+    # Exercise the gem with Rails 8.1 framework defaults.
+    config.load_defaults 8.1
 
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers

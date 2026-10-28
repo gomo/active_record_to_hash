@@ -9,9 +9,14 @@ ActiveRecordToHash will be useful when creating a Web API that returns a respons
 ## Installation
 
 ```
-gem 'active_record_to_hash', '~>0.1'
+gem 'active_record_to_hash', '~> 1.5.2'
 ```
 
+
+## Compatibility
+
+The test suite passes on Ruby 3.4.12 and Rails 8.1.4 with Rails 8.1 framework defaults.
+The gem declares Ruby >= 2.6 and Rails >= 5.0; other combinations have not been verified in this release.
 
 ## Usage
 

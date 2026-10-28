@@ -20,16 +20,17 @@ Gem::Specification.new do |s|
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
 
   s.add_dependency 'rails', '>= 5.0'
-  s.add_development_dependency 'database_cleaner', '~> 1.6'
-  s.add_development_dependency 'factory_bot_rails', '~> 4.8'
+  s.add_development_dependency 'database_cleaner-active_record', '~> 2.0'
+  s.add_development_dependency 'factory_bot_rails', '~> 6.0'
   s.add_development_dependency 'faker'
   s.add_development_dependency 'pry-byebug'
   s.add_development_dependency 'pry-doc'
   s.add_development_dependency 'pry-rails'
   s.add_development_dependency 'pry-stack_explorer'
-  s.add_development_dependency 'rspec', '=3.10'
-  s.add_development_dependency 'rspec-rails'
-  s.add_development_dependency 'rubocop', '=0.75.0'
+  s.add_development_dependency 'rspec', '~> 3.13'
+  s.add_development_dependency 'rspec-rails', '~> 8.0'
+  s.add_development_dependency 'rubocop', '~> 1.0'
   s.add_development_dependency 'rubocop-rails'
-  s.add_development_dependency 'sqlite3', '~> 1.3'
+  s.add_development_dependency 'sqlite3', '~> 2.0'
+  s.add_development_dependency 'sprockets-rails'
 end
